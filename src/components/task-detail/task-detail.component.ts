@@ -1,15 +1,15 @@
 import {
   Component,
+  effect,
   Injector,
   OnInit,
-  Signal,
-  WritableSignal,
+  Signal,  
 } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { TasksService } from '../../services/tasks.service';
 import { Tasks } from '../../models/tasks.interface';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable, of, switchMap } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-task-detail',
@@ -35,7 +35,12 @@ export class TaskDetailComponent implements OnInit {
     );
     this.task = toSignal(this.todos$, {
       injector: this.injector,
-    });
-    console.log(this.task());
+    });    
+    effect(() => {
+      const taskValue = this.task();
+      if(taskValue) {
+        console.log(taskValue);
+      }
+    }, { injector: this.injector });
   }
 }
