@@ -21,4 +21,8 @@ export class TasksListComponent implements OnInit {
   fetchDetails(id: number): void {
     this.router.navigate(['/task-detail', id]);
   }
+
+  addTasks(): void {
+    this.router.navigate(['/add-tasks']);
+  }
 }
