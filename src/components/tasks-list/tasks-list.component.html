@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <h2>Tasks List</h2>
+  @for(task of todos(); track task.id) {
+  <div class="card col-md-12 mb-2" (click)="fetchDetails(task.id)">
+    <div class="card-header">
+      <h2 class="card-title">{{ task.id }}</h2>
+    </div>
+    <div class="card-body">
+      <p>{{ task.todo }}</p>
+    </div>
+    <div class="card-footer">
+      @if(task.completed) {
+      <p>Completed</p>
+      } @else {
+      <p>Not completed</p>
+      }
+    </div>
+  </div>
+  }
+</div>

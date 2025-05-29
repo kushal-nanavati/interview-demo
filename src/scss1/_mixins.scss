@@ -1,0 +1,4 @@
+@mixin image-container {
+  $logo_path: '../../angular.png';
+  background-image: url($logo_path);
+}
