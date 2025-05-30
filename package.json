@@ -1,17 +1,7 @@
 {
   "name": "stackblitz-starters-n1eywu",
   "version": "0.0.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
-
   "private": true,
-  
   "dependencies": {
     "@angular/animations": "17.1.0",
     "@angular/common": "17.1.0",
@@ -26,6 +16,14 @@
     "rxjs": "7.8.1",
     "tslib": "2.6.2",
     "zone.js": "0.14.2"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "17.1.0",
