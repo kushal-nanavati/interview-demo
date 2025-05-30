@@ -15,7 +15,7 @@ import { BehaviorSubject, Observable, of, switchMap } from 'rxjs';
 @Component({
   selector: 'app-task-detail',
   templateUrl: './task-detail.component.html',
-  styleUrls: ['./task-detail.component.css'],
+  styleUrls: ['./task-detail.component.scss'],
   standalone: true,
   providers: [TasksService],
 })
@@ -36,12 +36,7 @@ export class TaskDetailComponent implements OnInit {
     );
     this.task = toSignal(this.todos$, {
       injector: this.injector      
-    });        
-    effect(() => {
-      const taskValue = this.task();
-      if(taskValue) {
-        console.log(taskValue);
-      }
-    }, { injector: this.injector });    
+    });
+    console.log(this.task());    
   }
 }

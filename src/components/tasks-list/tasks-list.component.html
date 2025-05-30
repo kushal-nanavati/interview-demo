@@ -3,6 +3,9 @@
     <h2>Tasks List</h2>
     <button class="btn btn-primary" (click)="addTasks()">Add Tasks</button>
   </div>
+  <div class="row my-2">
+    <router-outlet></router-outlet>
+  </div>
   @for(task of todos(); track task.id) {
   <div class="card col-md-12 mb-2" (click)="fetchDetails(task.id)">
     <div class="card-header">

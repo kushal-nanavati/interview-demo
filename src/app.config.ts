@@ -9,10 +9,13 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideHttpClient(),
     provideRouter([
-      { path: '', redirectTo: '/tasks-list', pathMatch: 'full' },
-      { path: 'tasks-list', component: TasksListComponent },
-      { path: 'task-detail/:id', component: TaskDetailComponent },
-      { path: 'add-tasks', component: AddTasksComponent }
+      { path: '', redirectTo: 'tasks-list', pathMatch: 'full' },
+      { path: 'tasks-list', component: TasksListComponent, children: [        
+          { path: 'task-detail/:id', component: TaskDetailComponent }
+      ] },
+      // { path: 'tasks-list', component: TasksListComponent },
+      // { path: 'task-detail/:id', component: TaskDetailComponent },
+      { path: 'add-tasks', component: AddTasksComponent }      
     ]),
   ],
 };
